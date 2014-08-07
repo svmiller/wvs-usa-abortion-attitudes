@@ -1,5 +1,5 @@
 getwd()
-setwd("/Dropbox/teaching/posc3410") # Note: change to a working directory good enough for you.
+setwd("~/Dropbox/teaching/posc3410") # Note: change to a working directory good enough for you.
 library(car)
 library(lattice)
 library(RCurl)
