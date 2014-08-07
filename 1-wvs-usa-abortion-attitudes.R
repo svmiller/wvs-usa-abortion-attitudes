@@ -54,3 +54,5 @@ plot.ci(M3.sim, xlab = "Age in Years",
 
 M4 <- lmer(aj ~ z.age + I(z.age^2)  + female + unemployed + z.ideology + z.satisfinancial + cai + trustmostpeople + z.godimportant + respectauthority + nationalpride + (1 | wave), data = Data)
 dotplot(ranef(M4, condVar=TRUE))
+
+M5 <- zelig(aj ~ z.age + I(z.age^2) + female + unemployed + z.ideology + z.satisfinancial + cai + trustmostpeople + z.godimportant + respectauthority + nationalpride, model = "gamma", data = Data)
