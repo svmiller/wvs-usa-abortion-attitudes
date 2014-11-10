@@ -27,12 +27,14 @@ Data$z.satisfinancial <- with(Data, (satisfinancial - mean(satisfinancial, na.rm
 Data$z.godimportant <- with(Data, (godimportant - mean(godimportant, na.rm = TRUE))/(2*sd(godimportant, na.rm = TRUE)))
 
 M2 <- lm(aj ~ z.age + I(z.age^2)  + female + unemployed + z.ideology + z.satisfinancial + cai + trustmostpeople + z.godimportant + respectauthority + nationalpride, data=Data)
+summary(M2)
 
 # Zelig is not playing nice with the z.age variable. Let's use interval age for now.
 Data2 <- with(Data,  data.frame(aj, age, female, unemployed, z.ideology, z.satisfinancial, cai, trustmostpeople, z.godimportant, respectauthority, nationalpride))
 Data2 <- na.omit(Data2)
 
 M3 <- zelig(aj ~ age + I(age^2)  + female + unemployed + z.ideology + z.satisfinancial + cai + trustmostpeople + z.godimportant + respectauthority + nationalpride, model = "ls", data = Data2)
+summary(M3)
 
 mingod <- min(Data2$z.godimportant, na.rm = TRUE)
 maxgod <- max(Data2$z.godimportant, na.rm = TRUE)
