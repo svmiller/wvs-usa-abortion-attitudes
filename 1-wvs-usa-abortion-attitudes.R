@@ -46,9 +46,9 @@ M3.high <- setx(M3, z.godimportant = mingod, age = minage:maxage)
 
 M3.sim <- sim(M3, x = M3.low, x1 = M3.high)
 
-plot.ci(M3.sim)
+ci.plot(M3.sim)
 
-plot.ci(M3.sim, xlab = "Age in Years",
+ci.plot(M3.sim, xlab = "Age in Years",
          ylab = "Expected Value on the Justifiability of Abortion",
          main = "Effect of Religion and Age on Attitudes toward Abortion",
 )
